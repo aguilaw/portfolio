@@ -1,0 +1,5 @@
+name: wendy aguilar
+encoding: utf-8
+markdown: redcarpet
+highlighter: null
+exclude: ["node_modules", "gulpfile.js", "package.json"]
