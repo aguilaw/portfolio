@@ -1,0 +1,47 @@
+.about
+  z-index: 0
+  transition: all 0.5s ease-in-out
+  text-align: center
+  //margin-bottom:600px
+  .header-position
+    transition: all 0.2s ease-in-out
+    position: absolute
+    top:0
+    +calc(left,"50% - 103px")
+    box-sizing: border-box
+    text-align: center
+    width: 206px
+    height: 206px
+    border-radius: 50%
+    margin:auto
+    background:rgba(255,255,255,1)
+    padding: 2em
+    z-index: 5
+    .logo
+      width:70%
+      height:70%
+      margin: auto
+      fill: $ACCENT_COLOR
+      svg
+        width:100%
+        height:100%
+
+  .portrait
+    position: relative
+    margin:auto
+    +calc(margin-top,"0% - 100px")
+    margin-bottom:2em
+    width: 200px
+    height: 200px
+    border-radius: 50%
+    background:
+      image:url("../img/avatar.jpg")
+      size:cover
+    z-index: 0
+  .icon-wrap
+    top:-30%
+    margin:auto
+  .blurb
+    position: relative
+    max-width: 350px
+    margin:auto

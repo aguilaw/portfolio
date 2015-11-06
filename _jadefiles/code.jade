@@ -1,0 +1,14 @@
+section.code.section-left
+  .info-wrap 
+    h2.title Code
+    .icon-wrap 
+      .icon-design.icon
+      .icon-code.icon
+      .icon-hedron.icon
+    p.blurb Seasonal robusta plunger pot flavour turkish strong viennese barista americano saucer 
+  .thumb-wrap
+    ul.thumb-container
+      |{% for project in site.data.settings.code-projects %}
+      li.thumb
+        img(alt="{{ project.name }}", src= "assets/img/work/{{project.folder}}/thumb.jpg")
+      |{% endfor %}

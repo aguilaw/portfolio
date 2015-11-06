@@ -1,2 +1,15 @@
 @import "0-tools/bourbon/bourbon";
 @import "0-tools/normalize";
+@import "0-tools/mixins";
+
+@import "1-base/vars";
+@import "1-base/base";
+
+@import "2-modules/header";
+@import "2-modules/about";
+@import "2-modules/code";
+@import "2-modules/design";
+@import "2-modules/hedron";
+@import "2-modules/contact";
+
+@import "3-layouts/home";
