@@ -1,4 +1,4 @@
-var pContainerHeight = $('.home-header').height();
+var pContainerHeight = $('#home-header').height();
 $(function() {
 	smoothScroll(300);
 
@@ -10,8 +10,8 @@ $(window).scroll(function(){
 
   if (wScroll >= pContainerHeight-250) {
 
-    $('.about').css({
-      'top' : '190px'
+    $('#about').css({
+      'top' : '300px'
     });
     $('.site-nav-full').css({
       'background-color' : '#DFD7D0'
@@ -22,7 +22,7 @@ $(window).scroll(function(){
     });
   }
   else{
-    $('.about').css({
+    $('#about').css({
       'top' : '0'
     });
     $('.site-nav-full').css({
@@ -43,7 +43,7 @@ function smoothScroll (duration) {
 	    if( target.length ) {
 	        event.preventDefault();
 	        $('html, body').animate({
-	            scrollTop: target.offset().top
+	            scrollTop: target.offset().top+400
 	        }, duration);
 	    }
 	});
