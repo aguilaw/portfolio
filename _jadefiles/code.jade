@@ -1,18 +1,22 @@
-section#code.section-left
-  .info-wrap 
-    .bar-wrap
-      .primary-bar
-      .secondary-bar
-      
-    h1.title Code
-    .icon-wrap 
-      .icon-design.icon
-      .icon-code.icon
-      .icon-hedron.icon
-    p.blurb Seasonal robusta plunger pot flavour turkish strong viennese barista americano saucer 
-  .thumb-wrap
-    ul.thumb-container
-      |{% for project in site.data.settings.code-projects %}
-      li.thumb
-        img(alt="{{ project.name }}", src= "assets/img/work/{{project.folder}}/thumb.jpg")
-      |{% endfor %}
+section#code
+  .section-wrap
+    .section-left
+      .info-wrap 
+        .bar-wrap
+          .primary-bar
+          .secondary-bar
+          
+        h1.title Code
+        .icon-wrap 
+          .icon-design.icon
+          .icon-code.icon
+          .icon-hedron.icon
+        p.blurb Seasonal robusta plunger pot flavour turkish strong viennese barista americano saucer 
+      .thumb-wrap
+        ul.thumb-container
+          |{% for project in site.data.settings.code-projects %}
+          label(for="{{ project.folder }}" )
+            li.thumb(data-folder="{{ project.folder }}", data-section="#code")
+              img(alt="{{ project.name }}", src= "assets/img/work/{{project.folder}}/thumb.jpg")
+          |{% endfor %}
+  include work-wrap
