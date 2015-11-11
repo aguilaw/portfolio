@@ -1,4 +1,5 @@
 var pContainerHeight = $('#home-header').height();
+var wScroll;
 $(function() {
 	smoothScroll(300);
 	workBelt();
@@ -7,7 +8,7 @@ $(function() {
 
 $(window).scroll(function(){
 
-  var wScroll = $(this).scrollTop();
+  wScroll = $(this).scrollTop();
 
   if (wScroll >= pContainerHeight-250) {
 
@@ -43,7 +44,11 @@ function smoothScroll (duration) {
 
 	    if( target.length ) {
 	        event.preventDefault();
-	        $('html, body').animate({
+					/*close the work belt if it is open and slide left to reveal thumbs*/
+					$('.work-belt').removeClass("slided");
+			    $('.work-wrap').fadeOut();
+
+	        $('html, body').delay(600).animate({
 	            scrollTop: target.offset().top+400
 	        }, duration);
 	    }
@@ -69,9 +74,7 @@ function workBelt() {
 
   $('.thumb-container .thumb').click(function() {
     $('.work-belt').addClass("slided");
-    var section= $(this).data('section')
-		$(section +' .work-wrap').css({'display':'inline-block'});
-		smoothScrollTo(section,300);
+		$('.work-wrap').css({'margin-top': (wScroll-1000)+'px','display':'inline-block'});
   });
 
   $('.work-return').click(function() {

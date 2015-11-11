@@ -6,9 +6,22 @@ title: Wendy Aguilar
   {%include header.html%}
   {%include about.html%}
   <div class="work-belt">
-    {%include design.html%}
-    {%include code.html%}
-    {%include hedron.html%}
+    <div class="section-wrap">
+      {%include design.html%}
+      {%include code.html%}
+      {%include hedron.html%}
+    </div>
+    <div class="work-wrap">
+      <div class="work-container">
+        <label for="return">
+          <div class="work-return">
+            {% include icons/icon-back.html %}
+          </div>
+        </label>
+        <h4 class="project-title">The Title</h4>
+        <div class="project-load">{%include proj-1.md %}</div>
+      </div>
+    </div>
   </div>
   {%include contact.html%}
 </div>

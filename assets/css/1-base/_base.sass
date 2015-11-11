@@ -123,10 +123,8 @@ section
   width:100%
   margin:auto
   position: relative
-  box-sizing: border-box
-#code,#design,#hedron
-  display:flex
-  align-items: top
+  box-sizing: content-box
+
 
 
 /*WORK BELT STYLES
@@ -134,16 +132,16 @@ section
 .work-belt
   width:200%
   +transition(all, 800ms)
+  white-space: nowrap
   position: relative
   &.slided
     +transform(translate3d(-50%, 0, 0))
-  //left:-100%
 .work-wrap,.section-wrap
   width:50%
   display:inline-block
+  vertical-align: top
+  white-space: normal
 .work-wrap
-  margin-top:37em
-  display:none
   .work-container
     max-width:600px
     margin:auto
