@@ -1,6 +1,7 @@
 @import "0-tools/bourbon/bourbon";
 @import "0-tools/normalize";
 @import "0-tools/mixins";
+@import "0-tools/toast-grid";
 
 @import "1-base/vars";
 @import "1-base/base";
@@ -13,3 +14,4 @@
 @import "2-modules/contact";
 
 @import "3-layouts/home";
+@import "3-layouts/work-display";

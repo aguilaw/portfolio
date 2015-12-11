@@ -2,242 +2,270 @@
 
 .gigantic, .huge, .large, .bigger, .big,
 h1, h2, h3, h4, h5, h6
-  color: $accent-color
-  font-weight: bold
-  margin:0
+  color:  $PRIMARY_COLOR
+  font-weight:  bold
+  margin: 0
 
 .gigantic
-  font-size: 110px
-  line-height: 1.09
-  letter-spacing: -2px
+  font-size:  110px
+  line-height:  1.09
+  letter-spacing:  -2px
 
 .huge, h1
-  font-size: 5em
-  line-height: 1.05
-  letter-spacing: -1px
-  font-family: 'Quicksand' sans-serif
-  text-transform:uppercase
-  color:$ACCENT_COLOR
+  font-size:  5em
+  line-height:  1.05
+  letter-spacing:  -1px
+  font-family:  'Quicksand' sans-serif
+  text-transform: uppercase
+  color: $PRIMARY_COLOR
 
 .large, h2
-  font-size: 2.25em
-  line-height: 1.14
+  font-size:  2.25em
+  line-height:  1.14
 
 .bigger, h3
-  font-size: 1.3125em
-  line-height: 1.38
+  font-size:  1.3125em
+  line-height:  1.38
 
 .big, h4
-  font-size: 1.125em
-  line-height: 1.38
+  font-size:  1.125em
+  line-height:  1.38
 
 h5
-  font-size: 1em
+  font-size:  1em
 
 .small, small
-  font-size: 10px
-  line-height: 1.2
+  font-size:  10px
+  line-height:  1.2
 
 
 
 p
-  margin: 0 0 20px 0
+  margin:  0 0 20px 0
 
 em
-  font-style: italic
+  font-style:  italic
 
 strong
-  font-weight: bold
+  font-weight:  bold
 
 hr
-  border: solid #ddd
-  border-width: 1px 0 0
-  clear: both
-  margin: 10px 0 30px
-  height: 0
+  border:  solid #ddd
+  border-width:  1px 0 0
+  clear:  both
+  margin:  10px 0 30px
+  height:  0
 
 
 
 // Links
 
 a
-  color: $link-color
-  text-decoration: none
-  outline: 0
+  color:  $link-color
+  text-decoration:  none
+  outline:  0
 
 a:hover, a:focus
-  color: lighten($link-color, 20%)
+  color:  lighten($link-color, 20%)
 
 
 
 // Selection colors (easy to forget)
 
 ::selection
-  background: $selection-color
+  background:  $selection-color
 
 ::-moz-selection
-  background: $selection-color
+  background:  $selection-color
 
 img::selection
-  background: transparent
+  background:  transparent
 
 img::-moz-selection
-  background: transparent
+  background:  transparent
 
 body
-  -webkit-tap-highlight-color: $selection-color
+  -webkit-tap-highlight-color:  $selection-color
 
 
 
 // Basic Styles
 
 body
-  background: $bg-color
-  font-size: 100%
-  line-height: 1.6
-  font-family: 'Roboto' sans-serif
-  color: $text-color
-  -webkit-font-smoothing: antialiased
-  -webkit-text-size-adjust: 100%
+  background:  $bg-color
+  font-size:  100%
+  line-height:  1.6
+  font-family:  'Roboto' sans-serif
+  color:  $text-color
+  -webkit-font-smoothing:  antialiased
+  -webkit-text-size-adjust:  100%
 
 
 .bar-wrap
-  width:2.5em
-  height:35em
-  margin-bottom:1em
+  width: 2.5em
+  height: 21em
+  margin-bottom: 1em
 
   .primary-bar
-    width:1em
-    height:110%
-    float:left
-    margin-top:-150px
-    background-color: $ACCENT_LIGHT
+    width: 1em
+    height: 110%
+    float: left
+    margin-top: -150px
+    background-color:  $ACCENT_LIGHT
 
   .secondary-bar
-    float:right
-    width:1em
-    height:100%
-    background-color: $ACCENT_DARK
+    float: right
+    width: 1em
+    height: 100%
+    background-color:  $ACCENT_DARK
 
 section
-  width:100%
-  margin:auto
-  position: relative
-  box-sizing: content-box
+  width: 100%
+  margin: auto
+  position:  relative
+  box-sizing:  content-box
 
 
 
 /*WORK BELT STYLES
 /***************************************
 .work-belt
-  width:200%
-  +transition(all, 800ms)
-  white-space: nowrap
-  position: relative
+  width: 200%
+  +transition(all, 400ms)
+  white-space:  nowrap
+  position:  relative
   &.slided
     +transform(translate3d(-50%, 0, 0))
 .work-wrap,.section-wrap
-  width:50%
-  display:inline-block
-  vertical-align: top
-  white-space: normal
-.work-wrap
-  .work-container
-    max-width:600px
-    margin:auto
-    label
-      position: relative
-      display: inline-block
-      float: left
-      z-index: 50
-    .work-return
-      +size(40px)
-      cursor: pointer
-      opacity: 0.5
-    h4, noscript h4
-      color: $ACCENT_COLOR
-      display: inline-block
-      font-weight: 300
-      text-transform: uppercase
-      font-size: 28px
-      line-height: 1.2
-      margin: 0 0 20px
+  width: 50%
+  display: inline-block
+  vertical-align:  top
+  white-space:  normal
 
-
-
-.info-wrap
-  width:35%
-  margin-bottom:8em
+.work-container
+  max-width: 600px
+  margin: auto
+  .work-return
+    +size(40px)
+    cursor:  pointer
+    opacity:  0.5
+  h4, noscript h4
+    color:  $PRIMARY_COLOR
+    display:  inline-block
+    font-weight:  300
+    text-transform:  uppercase
+    font-size:  28px
+    line-height:  1.2
+    margin:  0 0 20px
 
 .thumb-wrap
-  width:100%
-  height:20em
-  margin:auto
-  margin-top:90px
-  .thumb-container
-    display: flex
-    padding:0
-    flex-direction: row
-    justify-content: center
-    flex-wrap: wrap
-    label
-      position: relative
-      display: block
-      float: left
-      width: 25%
-      cursor: pointer
-    .thumb
-      display:inline-block
-      height:10em
-      background: lightgray
-    img
-      width:100%
-      height:100%
+  position: relative
+  width: 100%
+  margin: auto
+  margin-top: 90px
+  overflow: hidden
+  backface-visibility: hidden
+
+.img-wrap
+  position: absolute
+  top: -1.3em
+  height: 117%
+
+  img
+    top:-20px
+    z-index: -3
+    height: 100%
+
+.thumb-container
+  height: 100%
+  padding: 0
+  text-align:  center
+
+.thumb-unit
+  position:  relative
+  height:  13em
+  cursor:  pointer
+  overflow:  hidden
+  &:hover .thumb-overlay
+  	box-shadow: inset 0 0 0 110px RGBA($ACCENT_COLOR_RGB,.8), inset 0 0 0 16px $ACCENT_LIGHT,	0 1px 2px rgba(0,0,0,0.1)
+  &:hover .thumb-info
+    opacity: 1
+    transform: scale(1)
+
+.thumb-overlay
+  position: absolute
+  transition:  all ease-in-out 300ms
+  top: 0
+  width: 100%
+  height: 100%
+  box-shadow:  inset 0px 0px 0px 5px rgba(255, 255, 255, 0.4)
+
+.thumb-info
+  top:  -10%
+  position:  absolute
+  height:  120%
+  width:  100%
+  box-sizing:  border-box
+  top:  0
+  padding:  3em 1em 1em 1em
+  opacity: 0
+  transition:  all ease-in-out 300ms
+  transform:  scale(0)
+  backface-visibility: hidden
+  color:  white
+  font-size:  120%
+  .more
+    +size(50px)
+    background:  $ACCENT_COLOR
+    margin:  auto
+
 .section-left,.section-right
-  max-width:1200px
-  margin:auto
+  max-width:  1000px
+  margin:  auto
+  .title
+    font-size: 3em
 
 .section-left
   .info-wrap
-    margin-left:0
-    margin-right:auto
-    padding-left:60px
+    padding-left:  60px
   .bar-wrap
-    margin-left:0
-    margin-right:auto
+    margin-left:  0
+    margin-right:  auto
   .thumb-wrap
-    transform: skewY(-10deg)
-    .thumb-container
-    transform:skewY(10deg)
+    transform:  skew(0,10deg)
+    .thumb-info, img
+      transform:  skew(0,-10deg)
 
 .section-right
   .info-wrap
-    margin-left:auto
-    margin-right:0
-    text-align: right
-    padding-right:60px
+    text-align:  right
+    padding-right:  60px
     .icon-wrap
-      margin-left:auto
-      margin-right:0
+      margin-left:  auto
+      margin-right:  0
   .bar-wrap
-    margin-right:0
-    margin-left:auto
+    margin-right:  0
+    margin-left:  auto
   .thumb-wrap
-    transform: skewY(10deg)
+    transform:  skewY(-10deg)
+
     .thumb-container
-    transform:skewY(-10deg)
+      height: 100%
+    .thumb-info, img
+      transform:  skewY(10deg)
+
 .icon-wrap
-  position: relative
-  width:150px
-  height: 50px
-  max-width: 350px
-  margin-bottom:2em
-  display: flex
-  justify-content: space-between
-  align-items:center
+  position:  relative
+  width: 150px
+  height:  50px
+  max-width:  350px
+  margin-bottom: .5em
+  display:  flex
+  justify-content:  space-between
+  align-items: center
   .icon
-    width:40px
-    height:40px
-    background: pink
-    border-radius: 50%
-    display: inline-block
+    width: 40px
+    height: 40px
+    background:  $ACCENT_COLOR
+    border-radius:  50%
+    display:  inline-block

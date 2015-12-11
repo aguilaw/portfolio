@@ -4,6 +4,7 @@ var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var jade        =require('gulp-jade');
+var work        =require('gulp-jade');
 
 var jekyll = process.platform === "win32" ? "jekyll.bat" : "jekyll";
 
@@ -59,14 +60,21 @@ gulp.task('jade', function () {
   .pipe(jade())
   .pipe(gulp.dest('_includes'));
 });
+
+gulp.task('work', function () {
+  return gulp.src('_work/*.jade')
+  .pipe(work())
+  .pipe(gulp.dest('work'));
+});
 /**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['sass']);
-    gulp.watch(['index.html', '_layouts/*.html', '_posts/*', '_includes/*','assets/js/*'], ['jekyll-rebuild']);
-    gulp.watch('_jadefiles/*.jade',['jade']);
+    gulp.watch(['index.html', '_layouts/*.html', '_posts/*', '_includes/*','_work/**','assets/js/*'], ['jekyll-rebuild']);
+    gulp.watch('_jadefiles/**',['jade']);
+    gulp.watch('_work/**',['work']);
 });
 
 /**

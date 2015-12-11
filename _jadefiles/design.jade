@@ -1,20 +1,17 @@
-section#design.section-right
-  .info-wrap
-    .bar-wrap
-      .primary-bar
-      .secondary-bar
-    h1.title Design
-    .icon-wrap
-      .icon-design.icon
-      .icon-code.icon 
-      .icon-hedron.icon
-    p.blurb Seasonal robusta plunger pot flavour turkish strong viennese barista americano saucer 
+section#design.section-left
+  .row.row--no-gutter
+    .info-wrap.col.col--4-of-12
+      .bar-wrap
+        .primary-bar
+        .secondary-bar
+      h1.title design
+      .icon-wrap.col.col--1-of-12
+        .icon-design.icon
+        .icon-code.icon 
+        .icon-hedron.icon
+      p.blurb
   .thumb-wrap
-    ul.thumb-container
+    ul.thumb-container.row.row--no-gutter
       |{% for project in site.data.settings.design-projects %}
-      label(for="{{ project.folder }}" )
-        li.thumb(data-folder="{{ project.folder }}", data-section="#design")
-          img(alt="{{ project.name }}", src= "assets/img/work/{{project.folder}}/thumb.jpg")
+      include templates/thumbnails.jade
       |{% endfor %}
-
-  

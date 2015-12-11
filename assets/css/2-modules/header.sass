@@ -1,3 +1,32 @@
+.logo-wrap
+  transition: all 0.2s ease-in-out
+  position: relative
+  +calc(top,"50% - 200px")
+  margin: auto
+  box-sizing: border-box
+  text-align: center
+  +size(250px)
+  border-radius: 50%
+  margin:auto
+  background: white
+  padding: 2em
+  z-index: 5
+  .logo
+    width:70%
+    height:70%
+    margin: auto
+    fill: $PRIMARY_COLOR
+    svg
+      width:100%
+      height:100%
+.logo-line
+  width:10px
+  +calc(left,"50% - 10px")
+  height:30em
+  position: absolute
+  background: white
+
+
 .site-nav-full
   transition: all 0.2s ease-in-out
   position:fixed
@@ -23,8 +52,9 @@
   overflow: hidden
   margin-top:-19%
   width:100%
-  height:600px
-  z-index: 0
+  height:50em
+  z-index: 30
+  backface-visibility: hidden
   transform: skewY(10deg)
 
 
@@ -45,4 +75,5 @@
       color:white
       image:url('../img/bg/header-bg.jpg')
       size:cover
+      position: 50%
     transform: skewY(-10deg)

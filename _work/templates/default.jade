@@ -1,0 +1,21 @@
+.row(style="background:pink;")
+  //.header-image.col.col--2-of-2
+  .work-info-wrap
+    block work-title
+      h1.work-title A project
+    .tool-wrap.col.col--2-of-5
+      block tool-icons
+        p none
+    block year
+      h3.year A year
+
+.final-image.row.row--no-gutter   
+    block final-image
+      img(src="assets/img/avatar.png").final-img.col.col--centered
+
+.full-text.row--no-gutter
+  block brief
+    p.col.col--centered Some details
+    
+block custom-content
+  p additional contents

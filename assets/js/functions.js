@@ -3,39 +3,25 @@ var wScroll;
 $(function() {
 	smoothScroll(300);
 	workBelt();
+	workLoad();
 
 });
 
 $(window).scroll(function(){
 
   wScroll = $(this).scrollTop();
-
   if (wScroll >= pContainerHeight-250) {
-
-    $('#about').css({
-      'top' : '300px'
-    });
-    $('.site-nav-full').css({
+		$('.site-nav-full').css({
       'background-color' : '#DFD7D0'
-    });
-
-    $('.header-position').css({
-      'opacity' : '0'
     });
   }
   else{
-    $('#about').css({
-      'top' : '0'
-    });
-    $('.site-nav-full').css({
+		$('.site-nav-full').css({
       'background-color' : 'transparent'
     });
-		$('.header-position').css({
-			'opacity' : '1'
-		});
+
   }
 });
-
 
 function smoothScroll (duration) {
 	$('a[href^="#"]').on('click', function(event) {
@@ -48,8 +34,8 @@ function smoothScroll (duration) {
 					$('.work-belt').removeClass("slided");
 			    $('.work-wrap').fadeOut();
 
-	        $('html, body').delay(600).animate({
-	            scrollTop: target.offset().top+400
+	        $('html, body').delay(400).animate({
+	            scrollTop: target.offset().top+250
 	        }, duration);
 	    }
 	});
@@ -62,7 +48,7 @@ function smoothScrollTo (link,duration) {
 	    if( target.length ) {
 	        event.preventDefault();
 	        $('html, body').animate({
-	            scrollTop: target.offset().top+400
+	            scrollTop: target.offset().top+200
 	        }, duration);
 	    }
 }
@@ -72,9 +58,18 @@ function workBelt() {
   //$(".trigger").remove();
   //$(".return").remove();
 
-  $('.thumb-container .thumb').click(function() {
+  $('.thumb-unit').click(function() {
+	//	var workbeltHeight = $('.work-belt').height();
+		var aboutHeight = $('#about').height();
+	  pContainerHeight = $('#home-header').height();
+		var barHeight= $('#code .info-wrap').height();
+		var scrollOffset= wScroll-(aboutHeight+pContainerHeight-barHeight-25);
+		if(scrollOffset < 0){
+			scrollOffset=100;
+		}
+
     $('.work-belt').addClass("slided");
-		$('.work-wrap').css({'margin-top': (wScroll-1000)+'px','display':'inline-block'});
+		$('.work-wrap').css({'margin-top': (scrollOffset)+'px','display':'inline-block'});
   });
 
   $('.work-return').click(function() {
@@ -85,18 +80,16 @@ function workBelt() {
 }
 
 function  workLoad() {
-
   $.ajaxSetup({ cache: true });
 
-  $('.thumb-container label').click(function() {
+  $('.thumb-unit').click(function() {
     var $this = $(this),
-        newTitle = $this.find('strong').text(),
-        newFolder = $this.find('.thumb-unit').data('folder'),
+        newTitle = $this.data('name'),
+        newFolder = $this.data('folder'),
         spinner = '<div class="loader">Loading...</div>',
-        newHTML = 'work/'+ newFolder;
+        newHTML = 'work/'+ newFolder+'.html';
 
     $('.project-load').html(spinner).load(newHTML);
-    $('.project-title').text(newTitle);
   });
 
 }
