@@ -63,7 +63,7 @@ gulp.task('jade', function () {
 
 gulp.task('work', function () {
   return gulp.src('_work/*.jade')
-  .pipe(work())
+  .pipe(jade())
   .pipe(gulp.dest('work'));
 });
 /**

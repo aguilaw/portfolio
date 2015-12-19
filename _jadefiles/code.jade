@@ -5,13 +5,26 @@ section#code.section-right
         .primary-bar
         .secondary-bar
       h1.title code
-      .icon-wrap.col.col--1-of-12
-        .icon-design.icon
-        .icon-code.icon 
-        .icon-hedron.icon
-      p.blurb
-  .thumb-wrap
-    ul.thumb-container
-      |{% for project in site.data.settings.code-projects %}
-      include templates/thumbnails.jade
-      |{% endfor %}
+      .icon-wrap.col.col--12-of-12
+        .icon
+          |{% include icons/jekyll.html %}
+        .icon 
+          |{% include icons/laravel.html %}
+        .icon
+          |{% include icons/c.html %}
+      p.blurb As for code, these days I have been enjoying focusing on the front-end experience using jekyll, but I am no stranger to the challenges hidden behind the browser. 
+  .work-belt
+    .skewed-container
+      ul.thumb-container.row.row--no-gutter
+        |{% for project in site.data.settings.code-projects %}
+        include templates/thumbnails.jade
+        |{% endfor %}
+        
+    .work-wrap
+      .work-container
+        .work-return
+          |{% include icons/icon-back.html %}
+        .project-load
+        a(href="#code") 
+          .work-return
+            |{% include icons/icon-back.html %}

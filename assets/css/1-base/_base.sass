@@ -124,6 +124,7 @@ section
   margin: auto
   position:  relative
   box-sizing:  content-box
+  +transition(all, 400ms)
 
 
 
@@ -134,21 +135,26 @@ section
   +transition(all, 400ms)
   white-space:  nowrap
   position:  relative
-  &.slided
-    +transform(translate3d(-50%, 0, 0))
-.work-wrap,.section-wrap
+.slided
+  +transform(translate3d(-50%, 0, 0))
+.work-wrap,.skewed-container
   width: 50%
   display: inline-block
   vertical-align:  top
   white-space:  normal
-
 .work-container
   max-width: 600px
+  position: relative
   margin: auto
   .work-return
+    position: absolute
+    left: -45px
     +size(40px)
     cursor:  pointer
     opacity:  0.5
+    &:last-child
+      bottom: 0
+
   h4, noscript h4
     color:  $PRIMARY_COLOR
     display:  inline-block
@@ -158,12 +164,11 @@ section
     line-height:  1.2
     margin:  0 0 20px
 
-.thumb-wrap
+.skewed-container
   position: relative
-  width: 100%
-  margin: auto
-  margin-top: 90px
   overflow: hidden
+  margin: 4.3em 0
+  height: auto
   backface-visibility: hidden
 
 .img-wrap
@@ -222,16 +227,18 @@ section
 .section-left,.section-right
   max-width:  1000px
   margin:  auto
+  margin-bottom: -4em
+  overflow: hidden
   .title
     font-size: 3em
-
+    margin-bottom: .25em
 .section-left
   .info-wrap
     padding-left:  60px
   .bar-wrap
     margin-left:  0
     margin-right:  auto
-  .thumb-wrap
+  .skewed-container
     transform:  skew(0,10deg)
     .thumb-info, img
       transform:  skew(0,-10deg)
@@ -246,7 +253,7 @@ section
   .bar-wrap
     margin-right:  0
     margin-left:  auto
-  .thumb-wrap
+  .skewed-container
     transform:  skewY(-10deg)
 
     .thumb-container
@@ -256,16 +263,19 @@ section
 
 .icon-wrap
   position:  relative
-  width: 150px
-  height:  50px
-  max-width:  350px
+  max-width: 300px
+  height:  80px
   margin-bottom: .5em
   display:  flex
   justify-content:  space-between
   align-items: center
   .icon
-    width: 40px
-    height: 40px
-    background:  $ACCENT_COLOR
+    box-sizing: border-box
+    +size(80px)
+    padding: 10px
+    background:  $ACCENT_LIGHT
     border-radius:  50%
     display:  inline-block
+    fill: white
+    svg
+      +size(100%)

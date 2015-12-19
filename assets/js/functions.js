@@ -1,10 +1,12 @@
 var pContainerHeight = $('#home-header').height();
 var wScroll;
+var currentBelt=null;
+var currentProjectLoad=null;
+var currentOriginalHeight=null;
+
 $(function() {
 	smoothScroll(300);
 	workBelt();
-	workLoad();
-
 });
 
 $(window).scroll(function(){
@@ -25,71 +27,90 @@ $(window).scroll(function(){
 
 function smoothScroll (duration) {
 	$('a[href^="#"]').on('click', function(event) {
+	  var target = $( $(this).attr('href') );
 
-	    var target = $( $(this).attr('href') );
-
-	    if( target.length ) {
-	        event.preventDefault();
-					/*close the work belt if it is open and slide left to reveal thumbs*/
-					$('.work-belt').removeClass("slided");
-			    $('.work-wrap').fadeOut();
-
-	        $('html, body').delay(400).animate({
-	            scrollTop: target.offset().top+250
-	        }, duration);
-	    }
+	  if( target.length ) {
+	    event.preventDefault();
+			/*close the work belt if it is open and slide left to reveal thumbs*/
+			if (currentBelt!= null) {
+				currentBelt.removeClass("slided").css({height:currentBelt.height()}).animate({
+		        height: currentOriginalHeight
+		    }, 200);
+			}
+	    $('html, body').delay(400).animate({
+	        scrollTop: target.offset().top+250
+	    }, duration);
+	  }
 	});
 }
 
-function smoothScrollTo (link,duration) {
-
-	    var target = $(link);
-
-	    if( target.length ) {
-	        event.preventDefault();
-	        $('html, body').animate({
-	            scrollTop: target.offset().top+200
-	        }, duration);
-	    }
-}
-
 function workBelt() {
+	var designWorkLoad=$('#design .project-load');
+	var codeWorkLoad=$('#code .project-load');
+	var hedronWorkLoad=$('#hedron .project-load');
 
-  //$(".trigger").remove();
-  //$(".return").remove();
+	var designWorkWrap=$('#design .work-wrap');
+	var codeWorkWrap=$('#code .work-wrap');
+	var hedronWorkWrap=$('#hedron .work-wrap');
 
-  $('.thumb-unit').click(function() {
-	//	var workbeltHeight = $('.work-belt').height();
-		var aboutHeight = $('#about').height();
-	  pContainerHeight = $('#home-header').height();
-		var barHeight= $('#code .info-wrap').height();
-		var scrollOffset= wScroll-(aboutHeight+pContainerHeight-barHeight-25);
-		if(scrollOffset < 0){
-			scrollOffset=100;
-		}
+	var designWorkbelt=$('#design .work-belt');
+	var codeWorkbelt=$('#code .work-belt');
+	var hedronWorkbelt=$('#hedron .work-belt');
 
-    $('.work-belt').addClass("slided");
-		$('.work-wrap').css({'margin-top': (scrollOffset)+'px','display':'inline-block'});
+
+	var originalHeightDesign=designWorkbelt.height();
+	var originalHeightHedron=hedronWorkbelt.height();
+	var originalHeightCode=codeWorkbelt.height();
+
+
+  $(' #design .thumb-unit').click(function() {
+		currentBelt=designWorkbelt;
+		currentProjectLoad=designWorkLoad;
+		currentOriginalHeight=originalHeightDesign;
+
+		currentBelt.addClass('slided');
+		workLoad($(this),designWorkLoad);
+  });
+
+	$(' #code .thumb-unit').click(function() {
+			currentBelt=codeWorkbelt;
+			currentOriginalHeight=currentBelt.height();
+			currentBelt.addClass('slided');
+			workLoad($(this),codeWorkLoad);
+  });
+
+  $(' #hedron .thumb-unit').click(function() {
+		currentBelt=hedronWorkbelt;
+		currentOriginalHeight=currentBelt.height();
+		currentBelt.addClass('slided');
+		workLoad($(this),hedronWorkLoad);
   });
 
   $('.work-return').click(function() {
-    $('.work-belt').removeClass("slided");
-    $('.work-wrap').fadeOut();
+		currentBelt.removeClass("slided").css({height:currentBelt.height()}).animate({
+        height: currentOriginalHeight
+    }, 200);
+
   });
 
 }
 
-function  workLoad() {
+function  workLoad(clicked, projectLoad) {
   $.ajaxSetup({ cache: true });
-
-  $('.thumb-unit').click(function() {
-    var $this = $(this),
-        newTitle = $this.data('name'),
-        newFolder = $this.data('folder'),
+        newFolder = clicked.data('folder'),
         spinner = '<div class="loader">Loading...</div>',
         newHTML = 'work/'+ newFolder+'.html';
 
-    $('.project-load').html(spinner).load(newHTML);
-  });
+  projectLoad.html(spinner).load(newHTML,function(response,status,xhr) {
+		if (status='success') {
+			projectLoad.css({'height':projectLoad.height()})
+			currentBelt.css({height:currentBelt.height()}).animate({
+				height: projectLoad.height()}
+				, 200);
 
+		}
+		else {
+			alert("something went wrong, please refresh");
+		}
+	});
 }
