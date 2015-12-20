@@ -82,7 +82,6 @@ function workBelt() {
   $(' #hedron .thumb-unit').click(function() {
 		currentBelt=hedronWorkbelt;
 		currentOriginalHeight=currentBelt.height();
-		currentBelt.addClass('slided');
 		workLoad($(this),hedronWorkLoad);
   });
 
@@ -90,9 +89,7 @@ function workBelt() {
 		currentBelt.removeClass("slided").css({height:currentBelt.height()}).animate({
         height: currentOriginalHeight
     }, 200);
-
   });
-
 }
 
 function  workLoad(clicked, projectLoad) {
@@ -101,16 +98,7 @@ function  workLoad(clicked, projectLoad) {
         spinner = '<div class="loader">Loading...</div>',
         newHTML = 'work/'+ newFolder+'.html';
 
-  projectLoad.html(spinner).load(newHTML,function(response,status,xhr) {
-		if (status='success') {
-			projectLoad.css({'height':projectLoad.height()})
-			currentBelt.css({height:currentBelt.height()}).animate({
-				height: projectLoad.height()}
-				, 200);
-
-		}
-		else {
-			alert("something went wrong, please refresh");
-		}
+  projectLoad.html(spinner).load(newHTML,function() {
+			currentBelt.css({'height':'auto'});
 	});
 }
