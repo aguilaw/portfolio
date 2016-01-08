@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6
   letter-spacing:  -2px
 
 .huge, h1
-  font-size:  5em
+  font-size:  5rem
   line-height:  1.05
   letter-spacing:  -1px
   font-family:  'Quicksand' sans-serif
@@ -20,19 +20,19 @@ h1, h2, h3, h4, h5, h6
   color: $PRIMARY_COLOR
 
 .large, h2
-  font-size:  2.25em
+  font-size:  2.25rem
   line-height:  1.14
 
 .bigger, h3
-  font-size:  1.3125em
+  font-size:  1.3125rem
   line-height:  1.38
 
 .big, h4
-  font-size:  1.125em
+  font-size:  1.125rem
   line-height:  1.38
 
 h5
-  font-size:  1em
+  font-size:  1rem
 
 .small, small
   font-size:  10px
@@ -86,196 +86,15 @@ img::-moz-selection
 
 body
   -webkit-tap-highlight-color:  $selection-color
-
-
-
-// Basic Styles
-
-body
-  background:  $bg-color
-  font-size:  100%
-  line-height:  1.6
-  font-family:  'Roboto' sans-serif
-  color:  $text-color
-  -webkit-font-smoothing:  antialiased
-  -webkit-text-size-adjust:  100%
-
-
-.bar-wrap
-  width: 2.5em
-  height: 21em
-  margin-bottom: 1em
-
-  .primary-bar
-    width: 1em
-    height: 110%
-    float: left
-    margin-top: -150px
-    background-color:  $ACCENT_LIGHT
-
-  .secondary-bar
-    float: right
-    width: 1em
-    height: 100%
-    background-color:  $ACCENT_DARK
-
+  font-size: 100%
+  line-height: 1.5
+  color: white
+  font-family: 'Comfortaa', sans-serif
+.row p
+  text-align: justify
 section
-  width: 100%
-  margin: auto
-  position:  relative
-  box-sizing:  content-box
-  +transition(all, 400ms)
-
-
-
-/*WORK BELT STYLES
-/***************************************
-.work-belt
-  width: 200%
-  +transition(all, 400ms)
-  white-space:  nowrap
-  position:  relative
-.slided
-  +transform(translate3d(-50%, 0, 0))
-.work-wrap,.skewed-container
-  width: 50%
-  display: inline-block
-  vertical-align:  top
-  white-space:  normal
-.work-container
-  max-width: 700px
+  min-height: 100vh
   position: relative
-  margin: auto
-  .work-return
-    position: absolute
-    left: -45px
-    +size(40px)
-    cursor:  pointer
-    opacity:  0.5
-    &:last-child
-      bottom: 0
-
-  h4, noscript h4
-    color:  $PRIMARY_COLOR
-    display:  inline-block
-    font-weight:  300
-    text-transform:  uppercase
-    font-size:  28px
-    line-height:  1.2
-    margin:  0 0 20px
-
-.skewed-container
-  position: relative
-  overflow: hidden
-  margin: 4.3em 0
-  height: auto
-  backface-visibility: hidden
-
-.img-wrap
-  position: absolute
-  top: -1.3em
-  height: 117%
-
-  img
-    top:-20px
-    z-index: -3
-    height: 100%
-
-.thumb-container
-  height: 100%
-  padding: 0
-  text-align:  center
-
-.thumb-unit
-  position:  relative
-  height:  13em
-  cursor:  pointer
-  overflow:  hidden
-  &:hover .thumb-overlay
-  	box-shadow: inset 0 0 0 110px RGBA($ACCENT_COLOR_RGB,.8), inset 0 0 0 16px $ACCENT_LIGHT,	0 1px 2px rgba(0,0,0,0.1)
-  &:hover .thumb-info
-    opacity: 1
-    transform: scale(1)
-
-.thumb-overlay
-  position: absolute
-  transition:  all ease-in-out 300ms
-  top: 0
   width: 100%
-  height: 100%
-  box-shadow:  inset 0px 0px 0px 5px rgba(255, 255, 255, 0.4)
-
-.thumb-info
-  top:  -10%
-  position:  absolute
-  height:  120%
-  width:  100%
-  box-sizing:  border-box
-  top:  0
-  padding:  3em 1em 1em 1em
-  opacity: 0
-  transition:  all ease-in-out 300ms
-  transform:  scale(0)
-  backface-visibility: hidden
-  color:  white
-  font-size:  120%
-  .more
-    +size(50px)
-    background:  $ACCENT_COLOR
-    margin:  auto
-
-.section-left,.section-right
-  max-width:  1000px
-  margin:  auto
-  margin-bottom: -4em
-  overflow: hidden
-  .title
-    font-size: 3em
-    margin-bottom: .25em
-.section-left
-  .info-wrap
-    padding-left:  60px
-  .bar-wrap
-    margin-left:  0
-    margin-right:  auto
-  .skewed-container
-    transform:  skew(0,10deg)
-    .thumb-info, img
-      transform:  skew(0,-10deg)
-
-.section-right
-  .info-wrap
-    text-align:  right
-    padding-right:  60px
-    .icon-wrap
-      margin-left:  auto
-      margin-right:  0
-  .bar-wrap
-    margin-right:  0
-    margin-left:  auto
-  .skewed-container
-    transform:  skewY(-10deg)
-
-    .thumb-container
-      height: 100%
-    .thumb-info, img
-      transform:  skewY(10deg)
-
-.icon-wrap
-  position:  relative
-  max-width: 300px
-  height:  80px
-  margin-bottom: .5em
-  display:  flex
-  justify-content:  space-between
-  align-items: center
-  .icon
-    box-sizing: border-box
-    +size(80px)
-    padding: 10px
-    background:  $ACCENT_LIGHT
-    border-radius:  50%
-    display:  inline-block
-    fill: white
-    svg
-      +size(100%)
+  z-index: 5
+  top: 100%

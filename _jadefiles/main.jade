@@ -1,0 +1,42 @@
+//nav.site-nav-full
+//  ul
+//    li: a(href="#about") about
+//    li: a(href="#design") design
+//    li: a(href="#code") code
+//    li: a(href="#hedron") hedron
+//    li: a(href="#contact") contact
+  
+#main-layout 
+  .belt
+    .half-belt-left
+      .content-block
+        .link-wrap-left
+          .nav-about.nav-link-left.nav-link 
+            p about
+            .underline
+          .nav-contact.nav-link-left.nav-link
+            p contact
+            .underline
+      {%include about.html%}
+      {%include contact.html%}      
+          
+    .logo {% include /icons/icon-logo.html %}
+      p Wendy aguilar
+    .half-belt-right
+      .content-block
+        .link-wrap-right
+          .nav-code.nav-link-right.nav-link
+            p code
+            .underline
+          .nav-design.nav-link-right.nav-link
+            p design
+            .underline
+          .nav-hedron.nav-link-right.nav-link 
+            p art
+            .underline
+      {%include design.html%}
+      {%include code.html%}
+      {%include hedron.html%}
+    
+  
+  
