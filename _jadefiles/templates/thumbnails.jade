@@ -1,7 +1,13 @@
-li.thumb-unit.col.col--1-of-4(data-folder="{{project.folder}}", data-name="{{project.name}}")
-  .img-wrap
-    img(alt="{{ project.name }}", src= "assets/img/work/{{project.folder}}/thumb.jpg")
-  .thumb-overlay
-  .thumb-info 
-    p.project-title {{ project.name }}
-    .more 
+li.thumb-unit(data-folder="{{project.folder}}", data-name="{{project.name}}")
+  .container-3d.cube-md-container
+    .cube.cube-md.cube-hover
+      figure.front
+        img(alt="{{ project.name }}", src= "assets/img/work/{{project.folder}}/thumb.jpg")
+      figure.back(style="background: {{project.color}};") 
+      figure.left(style="background: {{project.color}};") 
+        .thumb-info
+          p.project-title {{ project.name }}
+          .more 
+      figure.right(style="background: {{project.color}};") 
+      figure.top(style="background: {{project.color}};") 
+      figure.bottom(style="background: {{project.color}};") 

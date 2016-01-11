@@ -3,15 +3,18 @@
 @import "0-tools/mixins";
 @import "0-tools/toast-grid";
 
+
 @import "1-base/vars";
 @import "1-base/base";
+@import "1-base/3dshapes";
 
 @import "2-modules/header";
 @import "2-modules/about";
 @import "2-modules/code";
 @import "2-modules/design";
-@import "2-modules/hedron";
+@import "2-modules/art";
 @import "2-modules/contact";
+@import "2-modules/home";
 
 @import "3-layouts/home";
 @import "3-layouts/work-display";

@@ -1,0 +1,20 @@
+section#design
+  .section-contents
+    h1 design
+    p.text-body.blurb Lorem ipsum dolor sit amet, consectetur 
+    p.text-body.desc Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..work-belt    
+    .work-belt
+      ul.thumb-wrap.row.row--no-gutter
+        |{% for project in site.data.settings.design-projects %}
+        include templates/thumbnails.jade
+        |{% endfor %}
+          
+      .work-wrap
+        .work-container
+          .work-return
+            |{% include icons/icon-back.html %}
+          .project-load
+          a(href="#design") 
+            .work-return
+              |{% include icons/icon-back.html %}
+.spacer-bg

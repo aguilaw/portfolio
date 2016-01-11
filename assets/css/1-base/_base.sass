@@ -66,7 +66,7 @@ a
   outline:  0
 
 a:hover, a:focus
-  color:  lighten($link-color, 20%)
+  color:  $link-color
 
 
 
@@ -90,11 +90,118 @@ body
   line-height: 1.5
   color: white
   font-family: 'Comfortaa', sans-serif
-.row p
-  text-align: justify
 section
-  min-height: 100vh
-  position: relative
+  box-sizing: border-box
+  padding: 5em 0
+
+
+.section-contents
   width: 100%
-  z-index: 5
-  top: 100%
+  max-width: 1200px
+  overflow: hidden
+  margin: auto
+  padding: 0 2em
+
+.cube-side
+  +size(100%)
+  img
+    +size(100%)
+.text-body
+  max-width: 600px
+
+.spacer-bg
+  height: 15em
+  width: 100%
+  background:
+    image: url('../img/bg/graffiti2-min.jpg')
+    size: cover
+    repeat: no-repeat
+    position: center
+    attachment: fixed
+
+
+.work-belt
+  width: 200%
+  +transition(all, 400ms)
+  white-space:  nowrap
+  position:  relative
+
+.slided
+  +transform(translate3d(-50%, 0, 0))
+
+.work-wrap,.thumb-wrap
+  width: 50%
+  box-sizing: border-box
+  display: inline-block
+  white-space:  normal
+
+.work-container
+  max-width: 800px
+  position: relative
+  margin: auto
+  .work-return
+    position: absolute
+    //left: -45px
+    +size(40px)
+    cursor:  pointer
+    opacity:  0.5
+    &:last-child
+      bottom: 0
+  h4, noscript h4
+    color:  $PRIMARY_COLOR
+    display:  inline-block
+    font-weight:  300
+    text-transform:  uppercase
+    font-size:  28px
+    line-height:  1.2
+    margin:  0 0 20px
+  img
+    z-index: -3
+    height: 100%
+    max-width: 100%
+.thumb-wrap
+  position: relative
+  height: auto
+  backface-visibility: hidden
+  padding: 0
+  text-align:  center
+.thumb-unit
+  position:  relative
+  width: 26%
+  display: inline-block
+  height:  13em
+  cursor:  pointer
+.thumb-info
+  text-align: center
+  position:  relative
+  height:  100%
+  width:  100%
+  box-sizing:  border-box
+  padding:  2em 1em 1em 1em
+  backface-visibility: hidden
+  color:  white
+  font-size:  100%
+  line-height: 1.2
+  .more
+    +size(50px)
+    background:  $ACCENT_COLOR
+    margin:  auto
+
+.icon-wrap
+  position:  relative
+  max-width: 300px
+  height:  80px
+  margin-bottom: .5em
+  display:  flex
+  justify-content:  space-between
+  align-items: center
+  .icon
+    box-sizing: border-box
+    +size(80px)
+    padding: 10px
+    background:  $ACCENT_LIGHT
+    border-radius:  50%
+    display:  inline-block
+    fill: white
+    svg
+      +size(100%)
