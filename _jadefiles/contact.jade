@@ -1,1 +1,13 @@
 section#contact
+  .section-contents
+    .section-intro
+      h1 contact
+      p.blurb Hey there! Lets keep in touch and create Stuff.
+    
+    form
+      input.name(type= "text", name="fname",placeholder="first name", required) 
+      input.name(type= "text", name="lname", placeholder="last name", required) 
+      input(type= "text", name= "email", placeholder="email", required) 
+      input(type= "text", name="subject",placeholder="subject", required) 
+      textarea(required, name="mssg",height="300px", width="200px") 
+      input.submit(type= "submit", value="SEND")

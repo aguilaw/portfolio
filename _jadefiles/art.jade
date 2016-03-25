@@ -1,20 +1,11 @@
 section#art
   .section-contents
-    h1 art
-    p.text-body.blurb Lorem ipsum dolor sit amet, consectetur 
-    p.text-body.desc Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..work-belt    
-    .work-belt
-      ul.thumb-wrap.row.row--no-gutter
-        |{% for project in site.data.settings.hedron-projects %}
-        include templates/thumbnails.jade
-        |{% endfor %}
-          
-      .work-wrap
-        .work-container
-          .work-return
-            |{% include icons/icon-back.html %}
-          .project-load
-          a(href="#design") 
-            .work-return
-              |{% include icons/icon-back.html %}
+    .section-intro
+      h1 art
+      p.text-body.blurb Like with desgin I'm faced with the choice between clean vectors and classic painting... 
+      p.text-body.desc It is usually through practicing art that I stumble upon new things that  must be coded or designed. As an aspiring artist I'm still finding a style and sketching any time not claimed by responsibility.
+    ul.thumb-wrap.row.row--no-gutter
+      |{% for project in site.data.settings.hedron-projects %}
+      include templates/thumbnails.jade
+      |{% endfor %}
 .spacer-bg

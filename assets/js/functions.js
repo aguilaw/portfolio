@@ -1,27 +1,20 @@
-var cubeStates= ["show-front","show-top","show-bottom","show-right","show-left","show-back"];
-var homeCube= $('.cube-rotate');
 var oldSide=0;
 var newSide=1;
 var pContainerHeight = $('#home').height();
 var wScroll;
 $(function() {
 	smoothScroll(300);
-	setInterval(turnCube,2000);
 });
 
 
 $(window).scroll(function(){
 
   wScroll = $(this).scrollTop();
-  if (wScroll >= pContainerHeight-250) {
-		/*$('.site-nav-full').css({
-      'background-color' : '#DFD7D0'
-    });*/
+  if (wScroll >= pContainerHeight) {
+		$('nav').fadeIn();
   }
   else{
-		/*$('.site-nav-full').css({
-      'background-color' : 'transparent'
-    });*/
+		$('nav').fadeOut();
 
   }
 });
@@ -34,24 +27,28 @@ function smoothScroll (duration) {
 	    event.preventDefault();
 			/*close the work belt if it is open and slide left to reveal thumbs*/
 	    $('html, body').delay(400).animate({
-	        scrollTop: target.offset().top
+	        scrollTop: target.offset().top-100
 	    }, duration);
 	  }
 	});
 }
 
-function turnCube(){
+function  workLoad(clicked, projectLoad) {
+  $.ajaxSetup({ cache: true });
+        newFolder = clicked.data('folder'),
+        spinner = '<div class="loader">Loading...</div>',
+        newHTML = 'work/'+ newFolder+'.html';
 
-	homeCube.each(function(index,value){
-	  $(this).removeClass(cubeStates[oldSide]);
-	  $(this).addClass(cubeStates[newSide]);
+  projectLoad.html(spinner).load(newHTML,function(response,status,xhr) {
+		if (status='success') {
+			projectLoad.css({'height':projectLoad.height()})
+			currentBelt.css({height:currentBelt.height()}).animate({
+				height: projectLoad.height()}
+				, 200);
+
+		}
+		else {
+			alert("something went wrong, please refresh");
+		}
 	});
-  oldSide=newSide;
-
-  if (oldSide == 5){
-    newSide=0;
-  }
-  else {
-    newSide = oldSide+1;
-  }
-};
+}

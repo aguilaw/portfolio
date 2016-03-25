@@ -2,6 +2,7 @@
   .#{$class}-container
     width: #{$size}px
     height: #{$size}px
+
   .#{$class} .front
     transform: rotateY(0deg) translateZ($size*.5px)
 
@@ -18,13 +19,15 @@
   .#{$class} .bottom
     transform: rotateX(-90deg) translateZ($size*.5px)
 
+
+
 .container-3d
   width: 300px
   height: 100px
   position: relative
   perspective: 1000
   margin: auto
-  margin-bottom: 2em
+  margin-bottom: 1em
 
 .box, .cube
   transition: -webkit-transform 500ms
@@ -45,7 +48,7 @@
   display: block
   position: absolute
   text-align: center
-  line-height: 100px
+  line-height: 75px
   font-size: 300%
   text-transform: uppercase
   letter-spacing: 10px
@@ -61,9 +64,24 @@
 
 +cube("cube-sm",100)
 +cube("cube-md",180)
-+cube("cube-lg",250)
-
-
++cube("cube-lg",200)
+.cube-rotate
+  animation-name: rotateCube
+  animation-duration: 8s
+  animation-iteration-count: infinite
+@keyframes rotateCube
+  0%
+    transform: rotateY(0deg)
+  20%
+    transform: rotateX(90deg)
+  40%
+    transform: rotateX(-90deg)
+  60%
+    transform: rotateY(90deg)
+  80%
+    transform: rotateY(-90deg)
+  100%
+    transform: rotateY(0deg)
 
 .cube-hover
   transform: translateZ(-100px) rotateY(-10deg)
@@ -75,12 +93,12 @@
 .box .front,
 .box .back
   width: 300px
-  height: 100px
+  height: 75px
 
 .box .right,
 .box .left
   width: 100px
-  height: 100px
+  height: 75px
 
 .box .top,
 .box .bottom
@@ -102,19 +120,4 @@
 .box .top
   transform: rotateX(90deg) translateZ(50px)
 .box .bottom
-  transform: rotateX(-90deg) translateZ(50px)
-
-
-
-.show-front
-  transform: translateZ(-100px) rotateY(0deg)
-.show-back
-  transform: translateZ(-100px) rotateX(-180deg)
-.show-right
-  transform: translateZ(-100px) rotateY(-90deg)
-.show-left
-  transform: translateZ(-100px) rotateY(90deg)
-.show-top
-  transform: translateZ(-100px) rotateX(-90deg)
-.show-bottom
-  transform: translateZ(-100px) rotateX(90deg)
+  transform: rotateX(-90deg) translateZ(25px)

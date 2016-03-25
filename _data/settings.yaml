@@ -8,9 +8,10 @@ email: devtipsfordesigners@gmail.com
 # NOTE: The Logo and Background image are defined in the all.sass document.
 
 menu:
-- {name: About Me, url: '#about-me'}
-- {name: Work, url: '#work'}
-- {name: Clients, url: '#clients'}
+- {name: About, url: '#about-me'}
+- {name: CODE, url: '#code'}
+- {name: DESIGN, url: '#design'}
+- {name: ART, url: '#art'}
 - {name: Contact, url: '#contact'}
 
 #-------------------------------
@@ -57,19 +58,19 @@ skills:
 # Work Section
 
 design-projects:
-- {name: Agendi, folder: 'agendi', file: 'work/agendi.html', color: '#E5E3E6'}
-- {name: Codelily, folder: 'codelily', file: 'work/proj-2.html', color: '#373838'}
-- {name: Hedron, folder: 'hedron-design', file: 'work/proj-3.html', color: '#D96B60'}
-- {name: Spark Science, folder: 'spark-science', file: 'work/spark-science.html', color: '#AC8E79'}
-- {name: The Take Off, folder: 'puzzle-hunt', file: 'work/proj-5.html', color: '#F7D7CC'}
-- {name: Mix It Up, folder: 'mix-it-up', file: 'work/proj-6.html', color: '#CCDCDE'}
+- {name: The Take Off, folder: 'the-take-off', file: 'work/the-take-off.html', color: '#110B2D', type: 'design'}
+- {name: Agendi, folder: 'agendi', file: 'work/agendi.html', color: '#E5E3E6', type: 'design'}
+- {name: Codelily, folder: 'codelily', file: 'work/codelily.html', color: '#373838', type: 'design'}
+- {name: Hedron, folder: 'hedron-design', file: 'work/hedron-design.html', color: '#D96B60', type: 'design'}
+- {name: Spark Science, folder: 'spark-science', file: 'work/spark-science.html', color: '#AC8E79', type: 'design'}
 
 #-------------------------------
 # Work Section
 
 code-projects:
-- {name: Hedron, folder: 'hedron-code', file: 'work/proj-1.html'}
-- {name: Dyno-Thumbs, folder: 'dyno-thumbs', file: 'work/proj-2.html'}
+- {name: Hedron, folder: 'hedron-code', file: 'work/proj-1.html', color: '#CCDCDE', type: 'code'}
+- {name: Dyno-Thumbs, folder: 'dyno-thumbs', file: 'work/proj-2.html', color: '#CCDCDE', type: 'code'}
+- {name: Color-Study, folder: 'dyno-thumbs', file: 'work/proj-2.html', color: '#CCDCDE', type: 'code'}
 
 #-------------------------------
 # Work Section
@@ -78,31 +79,6 @@ hedron-projects:
 - {name: The walk Home, folder: 'agendi', file: 'work/proj-1.html'}
 - {name: City-IN website concept, folder: 'agendi', file: 'work/proj-2.html'}
 - {name: Crispy Icons, folder: 'agendi', file: 'work/proj-3.html'}
-
-#-------------------------------
-# Clients Section
-
-clients:
-- {avatar: 'face-aaroni.jpg',
-  name: 'Scott Summers',
-  title: 'Director of Design, OnToText Ind.',
-  quote: '<p><strong>While we all felt that Travis was a great</strong> asset to our team — and really worked hard to understand our products from the point of view of the customer — we also all agree he should shower more often.</p>',
-  logo: 'logo1.jpg'}
-- {avatar: 'face-atariboy.jpg',
-  name: 'Hank McCoy',
-  title: 'Eater of Salad, Antartica Int.',
-  quote: '<p><strong>Working with Travis was the highlight of my career.</strong> Other moments of note were collecting the largest number of paperclips in the office, and winning a trophy for saying "uh huh, and then what?" 30 times in a row to my girlfriend without her noticing.</p>',
-  logo: 'logo2.jpg'}
-- {avatar: 'face-jackiesaik.jpg',
-  name: 'Stacy Lang',
-  title: 'Social Media Girl, Quebec Int.',
-  quote: '<p><strong>Yea, I guess hes good at computers or something,</strong> but let me ask you this: If a cat always lands on its feet, and buttered bread always lands butter side down, what would happen if you tied buttered bread on top of a cat?</p>',
-  logo: 'logo3.jpg'}
-- {avatar: 'face-teleject.jpg',
-  name: 'Cleatus Cassidy',
-  title: 'VP of Helmut, Lorem Sorem LLC.',
-  quote: '<p><strong>Back in old country</strong> only nerds who is playing on computers. Now all bros is wanting to make codes and junk. I lost foot in war. You dont see girls asking me about homework.</p>',
-  logo: 'logo4.jpg'}
 
 
 #-------------------------------

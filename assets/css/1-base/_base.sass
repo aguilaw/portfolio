@@ -15,9 +15,10 @@ h1, h2, h3, h4, h5, h6
   font-size:  5rem
   line-height:  1.05
   letter-spacing:  -1px
-  font-family:  'Quicksand' sans-serif
+  font-family:  'Comfortaa', sans-serif
+  font-weight: bold
   text-transform: uppercase
-  color: $PRIMARY_COLOR
+  color: $ACCENT_COLOR
 
 .large, h2
   font-size:  2.25rem
@@ -83,7 +84,7 @@ img::selection
 
 img::-moz-selection
   background:  transparent
-
++scrollbars(.5em, slategray)
 body
   -webkit-tap-highlight-color:  $selection-color
   font-size: 100%
@@ -97,11 +98,13 @@ section
 
 .section-contents
   width: 100%
+  box-sizing: border-box
   max-width: 1200px
   overflow: hidden
   margin: auto
   padding: 0 2em
-
+.section-intro
+  margin-bottom: 3em
 .cube-side
   +size(100%)
   img
@@ -119,52 +122,22 @@ section
     position: center
     attachment: fixed
 
-
-.work-belt
-  width: 200%
-  +transition(all, 400ms)
-  white-space:  nowrap
-  position:  relative
-
-.slided
-  +transform(translate3d(-50%, 0, 0))
-
-.work-wrap,.thumb-wrap
-  width: 50%
+.thumb-wrap
+  width: 100%
+  max-width: 900px
   box-sizing: border-box
+  margin: auto
   display: inline-block
   white-space:  normal
-
-.work-container
-  max-width: 800px
-  position: relative
-  margin: auto
-  .work-return
-    position: absolute
-    //left: -45px
-    +size(40px)
-    cursor:  pointer
-    opacity:  0.5
-    &:last-child
-      bottom: 0
-  h4, noscript h4
-    color:  $PRIMARY_COLOR
-    display:  inline-block
-    font-weight:  300
-    text-transform:  uppercase
-    font-size:  28px
-    line-height:  1.2
-    margin:  0 0 20px
-  img
-    z-index: -3
-    height: 100%
-    max-width: 100%
-.thumb-wrap
   position: relative
   height: auto
   backface-visibility: hidden
   padding: 0
   text-align:  center
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+
 .thumb-unit
   position:  relative
   width: 26%
