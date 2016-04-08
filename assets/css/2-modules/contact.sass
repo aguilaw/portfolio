@@ -1,14 +1,12 @@
 #contact
-  background:
-    color:$ACCENT_BLUE
-    image: url('../img/bg/graffiti-min.jpg')
-    size: cover
-    repeat: no-repeat
-    position: center center
-
+  h2
+    text-align: center
+    font-size: 150%
+    padding: 1em 0
   form
     width: 70%
     max-width: 500px
+    min-width: 300px
     margin: auto
     input
       width: 100%
@@ -17,7 +15,7 @@
       height:2em
       padding: 1em
       box-sizing: border-box
-      background: transparentize(black,.6)
+      background: transparentize(black,.9)
       border-width: 0
     input:active
       border-color: white
@@ -25,12 +23,17 @@
       width:50%
       height:3em
       margin: auto
-      background:$ACCENT_RED
+      margin-top: 1em
+      background:$PRIMARY_COLOR
+      color: white
 
     textarea
       height: 300px
       width: 100%
-      background: transparentize(black,.6)
+      background: transparentize(black,.9)
+      border-width: 0
   .name
     width: 50%
     display: inline-block
+  .content-wrap
+    justify-content: center

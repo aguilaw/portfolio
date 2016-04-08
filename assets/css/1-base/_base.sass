@@ -15,14 +15,17 @@ h1, h2, h3, h4, h5, h6
   font-size:  5rem
   line-height:  1.05
   letter-spacing:  -1px
-  font-family:  'Comfortaa', sans-serif
-  font-weight: bold
+  font-family:  'exo', sans-serif
+  font-weight: 700
   text-transform: uppercase
-  color: $ACCENT_COLOR
+  color: white
 
 .large, h2
   font-size:  2.25rem
   line-height:  1.14
+  text-transform: uppercase
+  color: $PRIMARY_COLOR
+
 
 .bigger, h3
   font-size:  1.3125rem
@@ -69,8 +72,15 @@ a
 a:hover, a:focus
   color:  $link-color
 
-
-
+ul
+  display: flex
+  justify-content: space-around
+  align-items: center
+  flex-wrap: wrap
+  li
+    list-style: none
+    display: inline-block
+    padding: 0 .5em
 // Selection colors (easy to forget)
 
 ::selection
@@ -85,16 +95,95 @@ img::selection
 img::-moz-selection
   background:  transparent
 +scrollbars(.5em, slategray)
+
+.content-wrap
+  position: relative
+  padding: 2em
+  max-width: 1000px
+  display: flex
+  margin: auto
+  justify-content: flex-start
+  align-items: center
+  flex-wrap: wrap
+  flex-direction: column
+  .line-container
+    display:none
+.line-container
+  position: relative
+  height:35px
+  width:60px
+  margin: 1.5em auto 1.5em auto
+  overflow: visible
+
+  .line-set-bottom
+    top:77%
+    left: -28%
+    .line, .ball
+      background: $PRIMARY_COLOR
+  .line-set-top
+    top:25%
+    left: 15%
+    .line, .ball
+      background: $PRIMARY_COLOR
+.line-set-top, .line-set-bottom
+  position: absolute
+  display: block
+  transform: rotate(-45deg)
+  transition: all 400ms ease-in-out
+  width: 100%
+  .ball
+    position: absolute
+    transition: all 600ms ease-in-out
+    +size(13px)
+    background: white
+    border-radius: 50%
+    top: -6px
+  .line
+    width:100%
+    transition: all 400ms ease-in-out
+    height:1px
+    background: white
+.line-set-top p,.line-set-bottom p
+  display:none
+
+
+.line-set-top
+  top:-15%
+  left: 65%
+  .ball
+    right:10%
+    .more
+      position: absolute
+      top:0
+.line-set-bottom
+  top: 100%
+  left: -70%
+  .ball
+    left:10%
+
 body
   -webkit-tap-highlight-color:  $selection-color
   font-size: 100%
   line-height: 1.5
-  color: white
-  font-family: 'Comfortaa', sans-serif
-section
+  color: grey
+  font-family: 'exo', sans-serif
+/*.content-wrap
+  position: relative
+  display: flex
+  justify-content: space-around
+  align-items: center
   box-sizing: border-box
   padding: 5em 0
-
+  max-width: 1000px
+  margin: auto
+  img
+    max-width: 400px
+    border-radius: 50%*/
+.centered
+  margin: auto
+  text-align: center
+  max-width: 500px
+  padding-bottom: 2em
 
 .section-contents
   width: 100%
@@ -102,29 +191,29 @@ section
   max-width: 1200px
   overflow: hidden
   margin: auto
-  padding: 0 2em
+  padding: 0 2em  2em 2em
 .section-intro
   margin-bottom: 3em
-.cube-side
-  +size(100%)
-  img
-    +size(100%)
+
 .text-body
   max-width: 600px
 
 .spacer-bg
   height: 15em
   width: 100%
+  margin: 2em 0
   background:
     image: url('../img/bg/graffiti2-min.jpg')
     size: cover
     repeat: no-repeat
     position: center
     attachment: fixed
+  text-align: center
+  h1
+    line-height: 3em
 
 .thumb-wrap
   width: 100%
-  max-width: 900px
   box-sizing: border-box
   margin: auto
   display: inline-block
@@ -137,29 +226,39 @@ section
   display: flex
   justify-content: center
   flex-wrap: wrap
+  .line-set-top ,.line-set-bottom
+    .line
+      height:20px
 
 .thumb-unit
   position:  relative
-  width: 26%
   display: inline-block
-  height:  13em
   cursor:  pointer
-.thumb-info
-  text-align: center
-  position:  relative
-  height:  100%
-  width:  100%
-  box-sizing:  border-box
-  padding:  2em 1em 1em 1em
-  backface-visibility: hidden
-  color:  white
-  font-size:  100%
-  line-height: 1.2
-  .more
-    +size(50px)
-    background:  $ACCENT_COLOR
-    margin:  auto
+  font-size:  150%
 
+  .thumb-contents
+    position: relative
+    overflow: hidden
+    margin: auto
+    margin-bottom: .5em
+    border-radius: 50%
+    max-width: 248px
+    max-height: 248px
+  img
+    margin: auto
+    width: 100%
+    height: 100%
+
+.thumb-unit-lg
+  +size(350px)
+  p
+    font-size: 230%
+.thumb-unit-sm
+  +size(150px)
+  .line-set-top .ball p
+    font-size: 90%
+    top:-40px
+    left:-20px
 .icon-wrap
   position:  relative
   max-width: 300px
@@ -168,13 +267,78 @@ section
   display:  flex
   justify-content:  space-between
   align-items: center
-  .icon
-    box-sizing: border-box
-    +size(80px)
-    padding: 10px
-    background:  $ACCENT_LIGHT
-    border-radius:  50%
-    display:  inline-block
-    fill: white
-    svg
-      +size(100%)
+.icon
+  box-sizing: border-box
+  +size(80px)
+  padding: 10px
+  margin:0 .5em
+  background:  $ACCENT_LIGHT
+  border-radius:  50%
+  display:  inline-block
+  fill: white
+  svg
+    +size(100%)
+@media (min-width: $toast-breakpoint-medium)
+  .content-wrap
+    padding: 3em
+    flex-direction: row
+    align-items: flex-start
+    .line-container
+      display: block
+      margin:  0 1em
+  .mobile-project-title
+    display: none
+  .thumb-unit .thumb-contents
+    margin:auto
+    .line-set-top ,.line-set-bottom
+      .line
+        height:2px
+  .thumb-contents
+    max-height: 240px
+    border-radius: 50%
+  .line-set-top ,.line-set-bottom
+    p
+      position: absolute
+      display: block
+      top:-50px
+      left:-0px
+      width:200px
+      color: white
+      padding: .5em
+      text-transform: uppercase
+      letter-spacing: 5px
+      backface-visibility: hidden
+      line-height: 1.2
+      font-size:60%
+  .thumb-info
+    position:  absolute
+    background: transparentize($PRIMARY_COLOR, 1)
+    transition: all 500ms ease-in-out
+    max-width: 248px
+    max-height: 248px
+    border-radius: 50%
+    +size(100%)
+    top: 0
+    .more
+      +size(50px)
+      background:  $ACCENT_COLOR
+      margin:  auto
+
+  .thumb-unit:hover
+    .line-set-top
+      top: 60%
+      left: 15%
+      .ball
+        right:60%
+      .line
+        height:1px
+
+    .line-set-bottom
+      bottom: 60%
+      left: -15%
+      .ball
+        left:60%
+      .line
+        height:1px
+    .thumb-info
+      background: transparentize($PRIMARY_COLOR, .2)

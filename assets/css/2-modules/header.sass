@@ -1,16 +1,68 @@
+
+.header
+  margin:  2em auto .5em auto
+  border-bottom: $ACCENT_PURPLE 1px solid
+  display: flex
+  flex-wrap: nowrap
+  justify-content: center
+  padding-bottom: .75em
+
+
+  p
+    font-size: 120%
+    text-align: left
+    margin-top: 15px
+    text-transform: uppercase
+    margin-left:20px
+    display: inline-block
+    color: $PRIMARY_COLOR
+  p:first-child
+    text-align: right
+    margin-left:0
+    margin-right: 20px
+  .logo
+    fill: $PRIMARY_COLOR
+    display: inline-block
+    max-width:4em
+    svg
+      width:100%
+
+
 nav
-  width:100%
-  position: fixed
-  display: none
-  top: 0
   z-index: 100
+  li:hover .color-slider
+    left: 42%
   li
     list-style: none
     text-transform: uppercase
     letter-spacing: 3px
+    overflow: hidden
+    position: relative
+    height: 5em
+    padding: 0 .5em
+
+    .color-slider
+      backface-visibility: hidden
+      position: absolute
+      background: transparentize($PRIMARY_COLOR, .3)
+      left: -70%
+      top:10%
+      height: 80%
+      width: 10px
+      transition: all  300ms ease-in-out
+      transform: skewX(-45deg)
+      pointer-events: none
+    a
+      line-height: 5em
   .nav-links
     display: flex
     justify-content: space-around
-    background: transparentize($ACCENT_PURPLE,.2)
-    padding: 1em 3em
+    align-items: center
+    padding: 1em 0
     margin: 0
+
+#home-nav #slide-home,
+#about-nav #slide-about,
+#contact-nav #slide-contact,
+#work-nav #slide-work
+  left: 42%

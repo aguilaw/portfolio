@@ -1,14 +1,14 @@
-li.thumb-unit(data-folder="{{project.folder}}", data-name="{{project.name}}")
-  a(href="{{project.file}}" data-lightbox="{{ project.type }}")
-    .container-3d.cube-md-container
-      .cube.cube-md.cube-hover
-        figure.front
-          img(alt="{{ project.name }}", src= "assets/img/work/{{project.folder}}/thumb.jpg")
-        figure.back(style="background: {{project.color}};") 
-        figure.left(style="background: {{project.color}};") 
-          .thumb-info
-            p.project-title {{ project.name }}
-            .more 
-        figure.right(style="background: {{project.color}};") 
-        figure.top(style="background: {{project.color}};") 
-        figure.bottom(style="background: {{project.color}};") 
+li.thumb-unit.col.col--4-of-12(data-folder="{{project.folder}}", data-name="{{project.name}}")
+  .thumb-contents
+    a(href="{{project.file}}" data-lightbox="{{ project.type }}")
+      img(alt="{{ project.name }}", src= "/assets/img/projects/{{project.folder}}/thumb.jpg")
+      .thumb-info
+      .line-set-top
+        p {{ project.name }}
+        .ball
+          .more
+        .line
+      .line-set-bottom
+        .ball
+        .line
+  p.mobile-project-title {{ project.name }}

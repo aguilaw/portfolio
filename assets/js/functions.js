@@ -37,7 +37,7 @@ function  workLoad(clicked, projectLoad) {
   $.ajaxSetup({ cache: true });
         newFolder = clicked.data('folder'),
         spinner = '<div class="loader">Loading...</div>',
-        newHTML = 'work/'+ newFolder+'.html';
+        newHTML = '/projects/'+ newFolder+'.html';
 
   projectLoad.html(spinner).load(newHTML,function(response,status,xhr) {
 		if (status='success') {
@@ -48,7 +48,7 @@ function  workLoad(clicked, projectLoad) {
 
 		}
 		else {
-			alert("something went wrong, please refresh");
+			console.log("something went wrong, please refresh");
 		}
 	});
 }

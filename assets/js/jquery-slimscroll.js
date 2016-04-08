@@ -16,7 +16,7 @@
         width : '700px',
 
         // height in pixels of the visible scroll area
-        height : '250px',
+        height : 'auto',
 
         // width in pixels of the scrollbar and rail
         size : '10px',
@@ -168,7 +168,6 @@
             position: 'relative',
             overflow: 'hidden',
             margin: 'auto',
-            width: o.width,
             height: o.height
           });
 

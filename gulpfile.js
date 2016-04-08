@@ -62,9 +62,9 @@ gulp.task('jade', function () {
 });
 
 gulp.task('work', function () {
-  return gulp.src('_work/*.jade')
+  return gulp.src('_projects/*.jade')
   .pipe(jade())
-  .pipe(gulp.dest('work'));
+  .pipe(gulp.dest('projects'));
 });
 
 /**
@@ -73,9 +73,9 @@ gulp.task('work', function () {
  */
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['sass']);
-    gulp.watch(['index.html', '_layouts/*.html', '_posts/*', '_includes/*','_work/**','assets/js/*'], ['jekyll-rebuild']);
+    gulp.watch(['index.html', '_layouts/*.html', '_posts/*', '_includes/*','_projects/**','assets/js/*'], ['jekyll-rebuild']);
     gulp.watch('_jadefiles/**',['jade']);
-    gulp.watch('_work/**',['work']);
+    gulp.watch('_projects/**',['work']);
 });
 
 /**

@@ -1,29 +1,67 @@
+.slimScrollDiv
+  max-width:700px
+  width: 90vw
+.close-bttn
+  position: absolute
+  width: 5em
+  height: 5em
+  right: 0
+  z-index: 20
+  hr
+    position: absolute
+    top:1em
+    width:2em
+    height:2em
+    transform: rotate(45deg)
+    border-color: white
+  hr:first-child
+    transform: rotate(-45deg)
+    left:1.5em
 .lb-image
   p
     color: grey
-    padding: 0 2em
-  img
+    padding: 2em
+  /*img
     position: relative
     width: 100%
-    max-height: 100%
+    max-height: 100%*/
 
   .gif-wrap
     position: relative
-
     box-sizing: border-box
     margin: auto 0
     padding: 6em
     width: 100%
 
-    img
-      max-width: 400px
+    //img
+      //max-width: 400px
+  .content-wrap
+    align-items: center
+    padding: 1em
+    margin-bottom: 1.5em
+    .line-container
+      display:block
+    h1
+      color: $ACCENT_DARK
+      font-weight: 600
+      font-size: 220%
+      letter-spacing: 10px
+      margin-bottom: .25em
+      max-width: 233px
+
+    .info
+      max-width: 170px
+      letter-spacing: 7px
+      font-size: 75%
+      text-transform: uppercase
+      p
+        margin-bottom: .25em
+        padding:0
+
+
 .project-load
   min-height: 200px
-.final-image img
-  max-width: 100%
-  max-height: 100%
-.row
-  margin-bottom: 1em
+
 .work-info-wrap
   text-align: center
   padding: 4em 2em
@@ -37,3 +75,17 @@
 .project-load
   .row--no-gutter p
     padding: .1em 2em .5em 2em
+
+@media (min-width: $toast-breakpoint-medium)
+  .lb-image .content-wrap
+    padding: 3em
+    justify-content: center
+    h1
+      margin-right: -11%
+    .info
+      margin-left: -14%
+      margin-top: 6%
+    .line-container
+      height:100px
+      width: 140px
+      margin: 0 3em

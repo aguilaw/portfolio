@@ -80,14 +80,17 @@
   // Attach event handlers to the new DOM elements. click click click
   Lightbox.prototype.build = function() {
     var self = this;
-    $('<div id="lightboxOverlay" class="lightboxOverlay"></div><div id="lightbox" class="lightbox"><div class="lb-outerContainer"><div class="lb-container"><div class="lb-image"  /></div><div class="lb-nav"><a class="lb-prev" href="" ></a><a class="lb-next" href="" ></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div></div>').appendTo($('body'));
+    $('<div id="lightboxOverlay" class="lightboxOverlay"></div><div id="lightbox" class="lightbox"><div class="lb-outerContainer"><div class="lb-container"><div class="lb-image"  /></div><div class="lb-nav"><div class="close-bttn"><hr><hr></div><a class="lb-prev" href="" ></a><a class="lb-next" href="" ></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div></div>').appendTo($('body'));
 
     // Cache jQuery objects
     this.$lightbox       = $('#lightbox');
     this.$overlay        = $('#lightboxOverlay');
-    this.$outerContainer = this.$lightbox.find('.lb-outerContainer').slimScroll({width:'750px', height:'90vh'});
+    this.$outerContainer = this.$lightbox.find('.lb-outerContainer');
+    this.$outerContainer.slimScroll({ height:'90vh'});
     this.$container      = this.$lightbox.find('.lb-container');
-
+    this.$closeBttn      = this.$lightbox.find('.close-bttn');
+    this.$containerWidth=this.$lightbox.find('.slimScrollDiv').width()-10;
+    this.$lightbox.find('.lb-nav').css({width: this.$containerWidth +'px', left: $(window).width()*.5-this.$containerWidth*.5+'px' });
     // Store css values for future lookup
     this.containerTopPadding = parseInt(this.$container.css('padding-top'), 10);
     this.containerRightPadding = parseInt(this.$container.css('padding-right'), 10);
@@ -111,6 +114,11 @@
       if ($(event.target).attr('id') === 'lightbox') {
         self.end();
       }
+      return false;
+    });
+
+    this.$closeBttn.on('click', function(event) {
+        self.end();
       return false;
     });
 
@@ -215,7 +223,7 @@
     this.$overlay.fadeIn(this.options.fadeDuration);
 
     $('.lb-loader').fadeIn('slow');
-    this.$lightbox.find('.lb-image, .lb-nav, .lb-prev, .lb-next, .lb-dataContainer, .lb-numbers, .lb-caption').hide();
+    //this.$lightbox.find('.lb-image, .lb-nav, .lb-dataContainer').hide();
 
     this.$outerContainer.addClass('animating');
 
@@ -327,7 +335,7 @@
       alwaysShowNav = (this.options.alwaysShowNavOnTouchDevices) ? true : false;
     } catch (e) {}
 
-    this.$lightbox.find('.lb-nav').show();
+  //  this.$lightbox.find('.lb-nav').show();
 
     if (this.album.length > 1) {
       if (this.options.wrapAround) {

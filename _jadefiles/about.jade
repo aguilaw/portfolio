@@ -1,21 +1,72 @@
-section#about
-  .section-contents
-    h1 about
-    .container-3d.cube-lg-container
-      .cube.cube-lg.cube-rotate
-        figure.front
-          img(src="/assets/img/portraits/avatar1.jpg")
-        figure.back
-          .logo {% include /icons/icon-logo.html %}
-        figure.left 
-          img(src="/assets/img/portraits/avatar2.jpg")
-        figure.right 
-          .logo {% include /icons/icon-logo.html %}
-        figure.top 
-          .logo {% include /icons/icon-logo.html %}
-        figure.bottom 
-          img(src="/assets/img/portraits/avatar4.jpg")
-            
-  .row
-    p.col.col--1-of-2.col--centered.text-body Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 .spacer-bg
+  h1 about
+section
+  .row
+    .content-wrap
+      h2 bio
+      .line-container
+        .line-set-top
+          .ball
+          .line
+        .line-set-bottom
+          .ball
+          .line
+      .col.col--5-of-12.text-body 
+        p I am a developer that dabbles in design form time to time. I currently live in sometimes sunny, but mostly rainy, seattle. 
+        p Sweater weather all the time? Perfect. 
+        p overcast days with a slight chill are the perfect excuse to stay inside and make stuff. art books, action thrillers, and mango juice top a long list of things i like, but i do try to learn and grow constanly.  
+         
+      .thumb-unit.col.col--4-of-12
+        .thumb-contents.thumb-unit-lg
+          .thumb-info
+          img(src="/assets/img/portraits/avatar2.jpg")
+          .line-set-top
+            .ball
+              p.project-title Hello!
+              .more
+            .line
+          .line-set-bottom
+            .ball
+            .line
+.spacer-bg
+section
+  .row
+    .content-wrap.tools-list
+      h2 tools
+      .line-container
+        .line-set-top
+          .ball
+          .line
+        .line-set-bottom
+          .ball
+          .line
+      ul.col.col--5-of-12
+        li photoshop
+        li illustrator
+        li laravel
+        li jekyll
+          
+    .content-wrap.tools-wrap
+      h2 tools
+      .line-container
+        .line-set-top
+          .ball
+          .line
+        .line-set-bottom
+          .ball
+          .line
+      .icon {% include icons/ai.html %}
+      .icon {% include icons/ps.html %}
+      .icon {% include icons/laravel.html %}
+      .icon {% include icons/jekyll.html %}
+      .icon {% include icons/paint.html %}
+      .icon {% include icons/tablet.html %}
+        
+    .row
+      .content-wrap
+        .thumb-unit.col.col--6-of-12
+          //.thumb-contents.thumb-unit-lg
+          //  img(src="/assets/img/portraits/avatar1.jpg")
+        .col.col--6-of-12
+          p These days I've been focusing my attention on front end web development with jekyll, but I like laravel for bigger projects. I have also begun to dig deeper into the world of javascript, which is both unusual and exciting.
+          p I focus on photoshop and illustrator for flat and bold graphics but in regards to painting, I prefer the feel of brush on canvas or ink on paper. 
