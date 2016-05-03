@@ -1,6 +1,5 @@
 name: wendy aguilar
 encoding: utf-8
-markdown: redcarpet
 highlighter: pygments
 permalink: pretty
 include: ['_includes/work']
