@@ -70,7 +70,7 @@ design-projects:
 code-projects:
 - {name: Hedron, folder: 'hedron-code', file: '/projects/hedron-code.html', color: '#CCDCDE', type: 'code'}
 - {name: Dyno-Thumbs, folder: 'dyno-thumbs', file: '/projects/dyno-thumbs.html', color: '#CCDCDE', type: 'code'}
-- {name: Color-Study, folder: 'color-study', file: '/projects/color-study.html', color: '#CCDCDE', type: 'code'}
+#- {name: Color-Study, folder: 'color-study', file: '/projects/color-study.html', color: '#CCDCDE', type: 'code'}
 
 #-------------------------------
 # projects Section
