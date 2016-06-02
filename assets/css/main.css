@@ -892,7 +892,7 @@ body {
   height: 15em;
   width: 100%;
   margin: 2em 0;
-  background-image: url("../img/bg/graffiti2-min.jpg");
+  background-image: url("../img/bg/graffiti2-mobile-sm.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -987,6 +987,8 @@ body {
     width: 100%; }
 
 @media (min-width: 700px) {
+  .spacer-bg {
+    background-image: url("../img/bg/graffiti2-min.jpg"); }
   .content-wrap {
     padding: 3em;
     -webkit-flex-direction: row;
